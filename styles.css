@@ -140,12 +140,16 @@ header.site .wrap { display: flex; align-items: center; gap: 14px; height: 68px;
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
 .hero-note { font-size: 0.88rem; color: var(--text-secondary); margin-top: 16px; }
 
+/* La captura se escala por altura, no por anchura: así se ve el teléfono entero
+   en lugar de quedar recortado por arriba y por abajo en pantallas bajas. */
 .phone {
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
   display: block;
-  border-radius: 34px;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(620px, 66vh);
+  border-radius: 30px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
